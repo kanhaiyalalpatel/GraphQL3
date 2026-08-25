@@ -1,0 +1,31 @@
+PACKAGES
+--------
+
+npm init
+npm i express apollo-server-express 
+npm i graphql express
+npm i dotenv --force
+npm i mongoose --force
+npm i bcrypt --force
+npm i jsonwebtoken
+
+---------------------
+mutation RegisterUser($name: String!, $email: String!, $password: String!) {
+  registerUser(name: $name, email: $email, password: $password) {
+    user{
+      name,
+      email
+    }
+  }
+}
+------------------------
+
+mutation LoginUser($email: String!, $password: String!) {
+  loginUser(email: $email, password: $password) {
+    token,
+    user{
+      id,
+      name
+    }
+  }
+}
